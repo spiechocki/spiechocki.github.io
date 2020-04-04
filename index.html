@@ -1,0 +1,115 @@
+<html>
+
+
+<head><title>Data 608 Module 5- Sheryl Piechocki</title></head>
+
+<body>
+
+<h1>Data 608 Module 5</h1>
+<hr>
+<h2>Part 1</h2>
+
+<p>
+Create a function to reverse any word that you type in. This can be typed into either an input box or an alert box, and then print the result in a box or on the webpage.
+</p>
+
+<script type="text/javascript">
+
+document.write('<p>Please enter a word in the box and then click the button.</p><br>');
+
+</script>
+
+<!-- <script type="text/javascript">
+function my_reverse(word){
+    var n = word.length - 1;
+    var i = n;
+    var rev_word = '';
+
+    for(; i >= 0; i--) {
+        rev_word = rev_word.concat("", word.substr(i,1));
+
+    };
+
+    var str;
+    str = word + ' in reverse is ' + rev_word;
+    
+    return(str);
+};
+
+function calc(){
+    var t = document.getElementById("target");
+    t.innerHTML = my_reverse(document.getElementById('word').value);
+}
+</script> -->
+
+<p>
+<form>
+    <input id="word" type="text" size="20">
+    <input type="button" value="Click me!" onClick="calc();">
+</form>
+</p>
+<br>
+<div id="target"; style="color:blue;"></div>
+
+<script type="text/javascript" src="other_script copy.js"></script>
+
+<hr>
+<h2>Part 2</h2>
+
+<p>
+Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4.
+</p>
+
+<script type="text/javascript">
+
+    document.write('<p>Please enter a number in the box and then click the button.</p><br>');
+    
+</script>
+    
+<script type="text/javascript">
+    function my_mult(num){
+
+        var cell = num
+    
+        var table = document.createElement('TABLE');
+        table.border='1';
+    
+        var tableBody = document.createElement('TBODY');
+        table.appendChild(tableBody);
+        var gothrough  = 0;
+      
+        for (var i=0; i < 20; i++){
+            gothrough = gothrough + cell;
+            var td = document.createElement('td');
+    
+            if (!(i % 4)) {
+            var tr = document.createElement('tr');
+            table.appendChild(tr);
+            }
+        td.appendChild(document.createTextNode(gothrough));
+        tr.appendChild(td);
+
+       }
+       return table
+    };
+    
+    function calc2(){
+        var t = document.getElementById("target2");
+        t.innerHTML = ""
+        t.appendChild(my_mult(Number(document.getElementById('num').value)));
+    }
+</script>
+    
+<p>
+<form>
+    <input id="num" type="number" size="5">
+    <input type="button" value="Click me!" onClick="calc2();">
+</form>
+</p>
+
+<br>
+
+<div id="target2"></div>
+    
+</body>
+</html>
